@@ -143,7 +143,5 @@
 // | Average Case     | `Θ`                 | Typical case (less used in practice) |
 
 
-// Let me know if you want graphical illustrations or to apply these to your own code!
-
 
 
