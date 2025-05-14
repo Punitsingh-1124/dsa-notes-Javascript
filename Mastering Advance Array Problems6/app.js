@@ -236,9 +236,146 @@
 
 
 //Question : sort the color
+// /**
+//  * Sorts the array so that 0s come first, then 1s, then 2s.
+//  * This is done in-place using the Dutch National Flag algorithm.
+//  * @param {number[]} nums
+//  * @return {void}
+//  */
+// function sortColors(nums) {
+//     let i = 0;             // Current index
+//     let j = 0;             // Index to place the next 0
+//     let k = nums.length - 1; // Index to place the next 2
+
+//     while (i <= k) {
+//         if (nums[i] === 0) {
+//             // Swap with j (left side for 0)
+//             [nums[i], nums[j]] = [nums[j], nums[i]];
+//             i++;
+//             j++;
+//         } else if (nums[i] === 2) {
+//             // Swap with k (right side for 2)
+//             [nums[i], nums[k]] = [nums[k], nums[i]];
+//             k--;
+//         } else {
+//             // nums[i] === 1; leave it in the middle
+//             i++;
+//         }
+//     }
+// }
+
+// // Test the function
+// let nums = [2, 0, 2, 1, 1, 0];
+// console.log("Before sorting:", nums);
+
+// sortColors(nums);
+
+// console.log("After sorting: ", nums);
 
 //Question : Maximum subarry / kadane's algorithm
+// // maxSubArray.js
+
+// /**
+//  * Finds the largest sum of a contiguous subarray
+//  * @param {number[]} nums
+//  * @return {number}
+//  */
+// function maxSubArray(nums) {
+//     let max = -Infinity;
+//     let sum = 0;
+
+//     for (let i = 0; i < nums.length; i++) {
+//         sum += nums[i];
+//         max = Math.max(max, sum);
+//         if (sum < 0) sum = 0;
+//     }
+
+//     return max;
+// }
+
+// // Test the function
+// const nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+
+// console.log("Input array:", nums);
+// const result = maxSubArray(nums);
+// console.log("Maximum subarray sum:", result);
+
 //Question : Majority Element/Moore's voting algo
+// // majorityElement.js
+
+// /**
+//  * Finds the majority element (appears more than n/2 times)
+//  * @param {number[]} nums
+//  * @return {number}
+//  */
+// function majorityElement(nums) {
+//     let ans = nums[0];
+//     let count = 1;
+
+//     for (let i = 1; i < nums.length; i++) {
+//         if (count === 0) {
+//             ans = nums[i];
+//             count = 1;
+//         } else if (ans === nums[i]) {
+//             count++;
+//         } else {
+//             count--;
+//         }
+//     }
+
+//     return ans;
+// }
+
+// // Test the function
+// const nums = [2, 2, 1, 1, 1, 2, 2];
+
+// console.log("Input array:", nums);
+// const result = majorityElement(nums);
+// console.log("Majority element:", result);
+
 //Question : Trapping rain water
+// // trapRainWater.js
+
+// /**
+//  * Calculates how much rainwater can be trapped.
+//  * @param {number[]} height
+//  * @return {number}
+//  */
+// function trap(height) {
+//     let left = new Array(height.length);
+//     let right = new Array(height.length);
+//     let maxLeft = height[0], maxRight = height[height.length - 1];
+
+//     left[0] = maxLeft;
+//     right[height.length - 1] = maxRight;
+
+//     // Fill left array with max heights to the left
+//     for (let i = 1; i < height.length; i++) {
+//         maxLeft = Math.max(height[i], maxLeft);
+//         left[i] = maxLeft;
+//     }
+
+//     // Fill right array with max heights to the right
+//     for (let i = height.length - 2; i >= 0; i--) {
+//         maxRight = Math.max(height[i], maxRight);
+//         right[i] = maxRight;
+//     }
+
+//     // Calculate trapped water
+//     let ans = 0;
+//     for (let i = 0; i < height.length; i++) {
+//         ans += Math.min(left[i], right[i]) - height[i];
+//     }
+
+//     return ans;
+// }
+
+// // Test the function
+// const height = [0,1,0,2,1,0,1,3,2,1,2,1];
+
+// console.log("Input elevation map:", height);
+// const result = trap(height);
+// console.log("Total trapped rainwater:", result);
+
 
 
