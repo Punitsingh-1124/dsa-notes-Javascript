@@ -148,13 +148,14 @@
 // }
 
 //exp:2
-function fiboNTerms(n, first, second) {
-    if (n == 0) return
-    let third = first + second;
-    process.stdout.write(third);
-    fiboNTerms(n - 1, second, third);
-}
+// function fiboNTerms(n, first, second) {
+//     if (n == 0) return
+//     let third = first + second;
+//     process.stdout.write(" " + third);
+//     fiboNTerms(n - 1, second, third);
+// }
 
-let n = 10;
-process.stdout.write(0 + " " + 1 + " ");
-fiboNTerms(n - 2, 0, 1);
+// let n = 10;
+// process.stdout.write(0 + " " + 1 + " ");
+// fiboNTerms(n - 2, 0, 1);
+//0 1  1 2 3 5 8 13 21 34
