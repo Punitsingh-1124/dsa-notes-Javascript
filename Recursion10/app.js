@@ -110,6 +110,7 @@
 
 //Question : Factorial / Sum
 
+//Sum
 //f(5) => 5 + f(4) => 4 + f(3) = ans
 
 // function sum(n) {
@@ -119,7 +120,41 @@
 // console.log(sum(10));
 // 55
 
+//Factorial
+// function fact(n) {
+//     if (n == 1) return n;
+//     return n * fact(n - 1);
+// }
+// console.log(fact(5));
+//120
 
 //When should be use retun keyword while recursive call
 
+
 //Quetion : Fibonacci series
+//adding priviess sum of torm
+//0,1,1,2,3,5,8,13,21,34......n
+
+//exp: 1
+// let n = 10;
+// let first = 0, second = 1;
+
+// process.stdout.write(first + " " + second + " ");
+// for (let i = 1; i <= n - 2; i++) {
+//     let third = first + second;
+//     first = second;
+//     second = third;
+//     process.stdout.write(third + " ");
+// }
+
+//exp:2
+function fiboNTerms(n, first, second) {
+    if (n == 0) return
+    let third = first + second;
+    process.stdout.write(third);
+    fiboNTerms(n - 1, second, third);
+}
+
+let n = 10;
+process.stdout.write(0 + " " + 1 + " ");
+fiboNTerms(n - 2, 0, 1);
